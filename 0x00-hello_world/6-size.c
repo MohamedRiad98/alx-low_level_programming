@@ -1,19 +1,15 @@
-#include <stdio.h>
+#include <sudio.h>
 /**
- * main - main block
- * Return: 0
- */
+* main - Entry Point to sizes
+*
+* Return : Always 0 (Success)
+*/
 int main(void)
 {
-	char char;
-	int int;
-	long int long int;
-        long long int long long int;
-	float float;
- printf("The Size of char : %i Byte(s)\n", sizeof(char));
- printf("The Size of int : %i Byte(s)\n", sizeof(int));
- printf("The Size of long int : %i Byte(s)\n", sizeof(long int));
- printf("The size of long long int : %i Byet(s)\n",sizeof(long long int));
- printf("The size of Float : %i Byte(s)\n",sizeof(float));
- return (0);
-} 
+printf ("This is Size of a char : %d byte(s)\n", sizeof(char));
+printf ("This is Size of a int : %d byte(s)\n", sizeof(int));
+printf ("This is Size of a long int : %d byte(s)\n", sizeof(long int));
+printf ("This is Size of a long long int : %d byte(s)\n", sizeof(long long int));
+printf ("This is Size of a float : %d byte(s)\n", sizeof(float));
+return (0);
+}
