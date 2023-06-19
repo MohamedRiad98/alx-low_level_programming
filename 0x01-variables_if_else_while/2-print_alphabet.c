@@ -5,13 +5,13 @@
  *
  * Return: Always 0 (Sucess)
  */
-int main(voidi) {
-    char letter;
+	int main(void) {
+    	char letter;
 
-    for (letter = 'a'; letter <='z';letter++)
-    {
-    putchar(letter);
-    }
-    putchar('\n');
-    return 0;
-    }
+    	for (letter = 'a'; letter <='z';letter++)
+    	{
+    	putchar(letter);
+    	}
+    	putchar('\n');
+    	return 0;
+   	 }
