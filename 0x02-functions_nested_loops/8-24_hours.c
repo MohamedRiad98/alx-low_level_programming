@@ -5,7 +5,7 @@
  * Return The sum of two numbers.
  */
 
-void jack_bauer (void)
+void jack_bauer(void)
 {
 	int h, m;
 
