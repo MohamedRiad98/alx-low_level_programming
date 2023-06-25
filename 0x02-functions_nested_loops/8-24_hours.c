@@ -1,10 +1,11 @@
 #include "main.h"
+
 /**
  * Jack Bauer - prints time table in format of HH:MM
  * Return The sum of two numbers.
  */
 
-int main()
+void jack_bauer(void)
 {
 	int h,m;
 	for(h = 0; h < 24;h++)
