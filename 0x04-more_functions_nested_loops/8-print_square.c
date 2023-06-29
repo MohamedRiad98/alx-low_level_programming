@@ -1,30 +1,23 @@
-#include "mian.h"
-
+#include "holberton.h"
 /**
- * print_square - entry point
- *
- * Description: Prints square
- *@size: size of square
- * Return: void
+ * print_square - prints a square followed by new line
+ * @size: int
+ * Return:always 0
  */
 
 void print_square(int size)
 {
-	int row, column;
-
-	if (size <= 0)
+	int length, width;
+for (length = 0; length < size; length++)
+{
+	for (width = 1; width <= size; width++)
 	{
-		_putchar('\n');
+		_putchar('#');
 	}
-	else
-	{
-		for (row = 1; row <= size; row++)
-		{
-			for (column = 1; column <= size; column++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
-		}
-	}
+	_putchar('\n');
+}
+if (size <= 0)
+{
+	_putchar('\n');
+}
 }
