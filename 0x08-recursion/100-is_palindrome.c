@@ -4,22 +4,24 @@
  *
  * is_palindrome - A program to check if the string is palindrome or not by checking if the str[i] == or != str[j]
  *
- * @i - variable used with the for loop
+ * @start - variable used to check the string from the start
  * @len - variable used to store the length of the string
- * @j - variable used for loop with len - 1 to check the reversed string
+ * @end - variable used to check the string from the end
  *
  *
  * Return - 1 - Successful
  */
+int is_palindrome_recursive(char *s, int start, int end) {
+    if (start >= end)
+        return 1;
+
+    if (s[start] != s[end])
+        return 0;
+
+    return is_palindrome_recursive(s, start + 1, end - 1);
+}
+
 int is_palindrome(char *s) {
-    int i, j;
     int len = strlen(s);
-
-    for (i = 0, j = len - 1; i < j; i++, j--) {
-        if (s[i] != s[j]) {
-            return 0;
-        }
-    }
-
-    return 1;
+    return is_palindrome_recursive(s, 0, len - 1);
 }
