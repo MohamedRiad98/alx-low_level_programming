@@ -4,10 +4,13 @@
 
 /*
  * create_array - create an array of and initialize it with a specific value
+ *
  *@size: size of the array
  *@c: character
+ *
  * Return: a pointer to the array, or NULL if it fails
  */
+
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
