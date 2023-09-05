@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -23,7 +24,7 @@ char *argstostr(int ac, char **av)
             len++;
 
     /* allocate memory for the new string */
-    str = malloc(len + ac + 1);
+    str = malloc((len + ac + 1) * sizeof(char));
     if (str == NULL)
         return (NULL);
 
