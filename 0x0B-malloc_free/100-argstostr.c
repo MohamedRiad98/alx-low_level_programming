@@ -12,32 +12,32 @@
  */
 char *argstostr(int ac, char **av)
 {
-    char *str;
-    int i, j, len = 0, pos = 0;
+	char *str;
+	int i, j, len = 0, pos = 0;
 
-    if (ac == 0 || av == NULL)
-        return (NULL);
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-    /* calculate the length of the new string */
-    for (i = 0; i < ac; i++)
-        for (j = 0; av[i][j]; j++)
-            len++;
+	/* Calculate the length of the new string */
+	for (i = 0; i < ac; i++)
+		for (j = 0; av[i][j]; j++)
+			len++;
 
-    /* allocate memory for the new string */
-    str = malloc((len + ac + 1) * sizeof(char));
-    if (str == NULL)
-        return (NULL);
+	/* Allocate memory for the new string */
+	str = malloc(len + ac + 1);
+	if (str == NULL)
+		return (NULL);
 
-    /* copy the arguments to the new string, separated by \n */
-    for (i = 0; i < ac; i++)
-    {
-        for (j = 0; av[i][j]; j++)
-        {
-            str[pos++] = av[i][j];
-        }
-        str[pos++] = '\n';
-    }
-    str[pos] = '\0';
+	/* Copy the arguments to the new string, separated by \n */
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+		{
+			str[pos++] = av[i][j];
+		}
+		str[pos++] = '\n';
+	}
+	str[pos] = '\0';
 
-    return (str);
+	return (str);
 }
