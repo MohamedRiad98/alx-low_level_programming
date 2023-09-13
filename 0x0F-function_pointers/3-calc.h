@@ -1,4 +1,4 @@
-ifndef CALCFUNC
+#ifndef CALCFUNC
 #define CALCFUNC
 
 #include <stdio.h>
