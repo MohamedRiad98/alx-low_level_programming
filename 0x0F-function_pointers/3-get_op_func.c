@@ -1,4 +1,4 @@
-#include"3-calc.h"
+#include "3-calc.h"
 
 /**
  * get_op_func - get the operator and redirect to the func.
