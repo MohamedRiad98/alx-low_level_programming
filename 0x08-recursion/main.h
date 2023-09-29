@@ -1,6 +1,7 @@
-#include <stdio.h>
-#ifndef
-#define
+#ifndef MAIN_H
+#define MAIN_H
+
 void _puts_recursion(char *s);
-char _putchar(char c)
+char _putchar(char c);
+
 #endif
