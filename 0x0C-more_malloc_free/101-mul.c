@@ -1,78 +1,69 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * _puts - prints a string, followed by a newline,
- * @str - pointer to the string to print
- * Return - void
- */
-
-void _puts(char *str)
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
+  */
+int _isdigit(char *argv)
 {
-	int i = 0;
-	while (str[i] != '\0')
+	int i;
+
+	i = 0;
+	while (argv[i])
 	{
-		_putchar(str[i]);
+		if (argv[i] >= '0' && argv[i] <= '9')
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+/**
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
+  */
+int _atoi(char *s)
+{
+	int i, result;
+
+	i = result = 0;
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result *= 10;
+			result += (s[i] - '0');
+		}
 		i++;
 	}
-}
-
-/**
- * _atoi - convert a string to an intager.
- * @s - char type string
- * Return - intager conveted
- */
-int _atoi(const char *s)
-{
-	int sign = 1;
-	unsigned long int resp = 0, i = 0;
-
-	if (s[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	for (; s[i] != '\0'; i++)
-	{
-		resp = resp*10 + s[i] - '0';
-	}
-	return (resp * sign);
+	return (result);
 }
 /**
- * print_int - prints an intager.
- * @n : int
- * Return - 0
- */
-void print_int(unsigned long int n)
+  * main - main function call
+  * @argc: argument count
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
+  */
+int main(int argc, char *argv[])
 {
-	unsigned long int divisor = 1, i, resp;
+	int i;
 
-	for (i = 0; n/divisor > 9; i++, divisor *= 10)
-		;
-	for (; divisor >= 1; n%=divisor, divisor /=10)
-	{
-		resp = n / divisor;
-		_putchar('0' + resp);
-	}
-}
-/**
- * Main - print the result of the multiplication, followed by a newline
- * @arc - int
- * @argv - list
- * Return - 0
- */
-int main(int argc, char const *argv[])
-{
-	(void)argc;
-
+	malloc();
 	if (argc != 3)
 	{
-		_puts("Error ");
+		printf("Error\n");
 		exit(98);
 	}
-	print_int(_atoi(argv[1]) * _atoi(argv[2]));
-	_putchar('\n');
-
+	for (i = 1; i < argc; i++)
+	{
+		if (_isdigit(argv[i]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
 	return (0);
 }
