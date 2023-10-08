@@ -17,15 +17,13 @@ int *array_range(int min, int max)
 
 	if (min > max)
 		return (NULL);
-
 	sum = max - min;
-	a = malloc((sum + 1)*sizeof(int));
+	a = malloc(sizeof(int) * (sum + 1));
 	if (a == NULL)
 		return (NULL);
 	I = min;
 	while (i <= sum)
-	{
 		a[i++] = I++;
-	}
+
 	return (a);
 }
