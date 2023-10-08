@@ -1,7 +1,21 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+/**
+ * _strlen - string len
+ * @s: string
+ *
+ * Return: int len
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}
 /**
  * string_nconcat - concatenates string s1 with nth of s2
  * @s1: string 1
@@ -12,39 +26,36 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int s1len, s2len, tots;
-	char *new;
-	int i, k;
+	char *a;
+	unsigned int s1Len, s2Len;
+	unsigned int i, I;
+	char nul = '\0';
+	int tots;
 
 	if (s1 == NULL)
-		return (NULL);
+		s1 = &nul;
 	if (s2 == NULL)
-		return (NULL);
+		s2 = &nul;
 
-	s1len = strlen(s1);
-	s2len = strlen(s2);
+	s1Len = _strlen(s1);
+	s2Len = _strlen(s2);
 
-	if (n >= s2len)
-		tots = s2len + s1len;
+	if (n >= s2Len)
+		tots = s2Len + s1Len;
 	else
-		tots = s2len + n;
-	
-	new = malloc(tots + 1);
-	if (new == NULL)
-		return (NULL);
-	
-	for (i = 0, k = 0; s1[i] != '\0'; i++)
-	{
-		new[k] = s1[i];
-		k++;
-	}
-	for (i = 0; s2[i] != '\0' && n != 0; i++)
-	{
-		new[k] = s2[i];
-		n--;
-		k++;
-	}
-	new[k] = '\0';
+		tots = s1Len + n;
 
-	return (new);
+	a = malloc(tots + 1);
+	if (a == NULL)
+		return (NULL);
+
+	i = 0, I = 0;
+	while (s1[i] != '\0')
+		a[I++] = s1[i++];
+	i = 0;
+	while (s2[i] != '\0' && n-- != 0)
+		a[I++] = s2[i++];
+	a[I] = '\0';
+
+	return (a);
 }
