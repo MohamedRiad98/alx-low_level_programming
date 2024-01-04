@@ -1,7 +1,3 @@
-/*
- * File: 102-print_comb5.c
- * Auth: Mohamed Riad
- */
 #include <stdio.h>
 
 /*
